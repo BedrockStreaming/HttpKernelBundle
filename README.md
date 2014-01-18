@@ -19,7 +19,7 @@ class AppKernel extends Kernel
 ```
 
 - KernelExceptionListener listener catch kernel exceptions events and dispatch another event with status code / response
-- KernelTerminateListener listener catch kernel terminate events and dispatch another with start time, route and method
+- KernelTerminateListener listener catch kernel terminate events and dispatch another with start time, memory consumed, route and method
 
 ## Launch tests
 
