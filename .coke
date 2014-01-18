@@ -1,0 +1,4 @@
+standard=Cytron
+
+src/
+!Tests/
