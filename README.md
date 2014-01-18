@@ -1,4 +1,4 @@
-# M6 Web SF2 Http Kernel
+# M6 Web SF2 Http Kernel [![Build Status](https://secure.travis-ci.org/M6Web/HttpKernelBundle.png)](http://travis-ci.org/M6Web/HttpKernelBundle)
 
 Add some features to Symfony 2 HttpKernel
 

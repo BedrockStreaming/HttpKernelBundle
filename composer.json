@@ -1,0 +1,42 @@
+{
+    "name": "m6/http-kernel-bundle",
+    "homepage": "https://github.m6web.fr/m6web/bundle-http-kernel",
+    "authors": [
+        {
+            "name": "M6Web",
+            "email": "opensource@m6web.fr",
+            "homepage": "http://tech.m6web.fr/"
+        },
+        {
+            "name": "Olivier Mansour"
+        },
+        {
+            "name": "Jeremy Jourdin"
+        },
+        {
+            "name": "Nicolas Chaulet"
+        }
+    ],
+    "license": "MIT",
+    "description": "custom SF2 HttpKernel",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://satis.m6web.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "twig/twig": "~1.13"
+    },
+    "require-dev": {
+        "atoum/atoum": "master-dev",
+        "atoum/atoum-bundle": "master-dev"
+    }
+}
