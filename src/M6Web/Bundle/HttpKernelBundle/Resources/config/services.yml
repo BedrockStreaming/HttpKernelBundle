@@ -1,0 +1,19 @@
+parameters:
+    m6.kernel.exception.listener.class: 'M6Web\Bundle\HttpKernelBundle\Listener\KernelExceptionListener'
+    m6.kernel.terminate.listener.class: 'M6Web\Bundle\HttpKernelBundle\Listener\KernelTerminateListener'
+
+services:
+    m6.kernel.exception.listener:
+        class: %m6.kernel.exception.listener.class%
+        arguments:
+            - @event_dispatcher
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException}
+
+    m6.kernel.terminate.listener:
+        class: %m6.kernel.terminate.listener.class%
+        arguments:
+            - @event_dispatcher
+            - @service_container
+        tags:
+            - { name: kernel.event_listener, event: kernel.terminate, method: onKernelTerminate}
