@@ -1,4 +1,4 @@
-standard=Cytron
+standard=Symfony2
 
 src/
 !Tests/
