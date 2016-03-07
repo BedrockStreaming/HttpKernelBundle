@@ -15,7 +15,7 @@ class KernelTerminateEvent extends Event
 
     /**
      * constructeur
-     * 
+     *
      * @param Request $request   request
      * @param int     $code      code
      * @param float   $startTime start time en ms
@@ -85,4 +85,13 @@ class KernelTerminateEvent extends Event
         return 0;
     }
 
+    /**
+     * retourne le host
+     *
+     * @return string
+     */
+    public function getHost()
+    {
+        return str_replace('.', '_', $this->request->getHost());
+    }
 }
