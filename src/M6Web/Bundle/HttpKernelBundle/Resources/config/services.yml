@@ -4,14 +4,14 @@ parameters:
 
 services:
     m6.kernel.exception.listener:
-        class: %m6.kernel.exception.listener.class%
+        class: '%m6.kernel.exception.listener.class%'
         arguments:
             - "@event_dispatcher"
         tags:
             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException}
 
     m6.kernel.terminate.listener:
-        class: %m6.kernel.terminate.listener.class%
+        class: '%m6.kernel.terminate.listener.class%'
         arguments:
             - "@event_dispatcher"
             - "@service_container"
