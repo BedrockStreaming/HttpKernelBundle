@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class KernelTerminateEvent extends Event
 {
-    private $request;
+    public $request;
     private $code;
     private $startTime;
 
