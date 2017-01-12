@@ -79,7 +79,7 @@ class KernelTerminateEvent extends Event
     {
         $mem = memory_get_peak_usage(true);
         if ($mem > 1024) {
-            return intval($mem / 1024);
+            return (int) ($mem / 1024);
         }
 
         return 0;
