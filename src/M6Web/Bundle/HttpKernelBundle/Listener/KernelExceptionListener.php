@@ -33,17 +33,22 @@ class KernelExceptionListener
      */
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
+        if (method_exists($event, 'getThrowable')) {
+            $exception = $event->getThrowable();
+        } else {
+            $exception = $event->getException();
+        }
+
         // avoid subrequest
         if (HttpKernelInterface::MASTER_REQUEST !== $event->getRequestType()) {
             return;
         }
 
-        if (method_exists($event->getException(), 'getStatusCode')) {
+        if (method_exists($exception, 'getStatusCode')) {
             $this->dispatcher->dispatch('m6kernel.exception',
-                new KernelExceptionEvent($event->getException()->getStatusCode()));
+                new KernelExceptionEvent($exception->getStatusCode()));
         }
 
-        $exception = $event->getException();
         if ($exception instanceof RedirectException) {
             $response = new RedirectResponse($exception->getUrl(), 301);
             $event->setResponse($response);
